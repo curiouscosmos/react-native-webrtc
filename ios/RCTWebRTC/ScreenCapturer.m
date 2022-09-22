@@ -208,7 +208,8 @@ const NSUInteger kMaxReadLength = 10 * 1024;
     int64_t frameTimeStampNs = currentTimeStampNs - _startTimeStampNs;
     
     RTCVideoRotation rotation;
-    switch (orientation) {
+    rotation = RTCVideoRotation_0;
+    /* switch (orientation) {
         case kCGImagePropertyOrientationLeft:
             rotation = RTCVideoRotation_90;
             break;
@@ -221,7 +222,7 @@ const NSUInteger kMaxReadLength = 10 * 1024;
         default:
             rotation = RTCVideoRotation_0;
             break;
-    }
+    } */
 
     RTCVideoFrame *videoFrame = [[RTCVideoFrame alloc] initWithBuffer: rtcPixelBuffer
                                                              rotation: rotation
